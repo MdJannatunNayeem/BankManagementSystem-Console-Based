@@ -1,9 +1,12 @@
 ﻿
 
+using System;
+
 namespace BankManagementSystem.Models
 {
     public class Transaction
     {
+
         public enum TransactionType
         {
             Deposit,
@@ -13,12 +16,12 @@ namespace BankManagementSystem.Models
 
         public enum StatusType
         {
-            Sucessfull,
+            Sucessful,
             Error,
             Pending
         }
 
-        public int Id { get; set; }
+        public string Id { get; private set; }
         public TransactionType Type {  get; set; }
         public decimal Amount {  get; private set; }
         public DateTime DateTime { get; set; }
@@ -26,6 +29,17 @@ namespace BankManagementSystem.Models
         public string ReceiverAccountNumber { get; set; }
         public StatusType Status { get; set; }
 
+        
 
+        public Transaction( int id,TransactionType type, decimal amount, string senderAccountNumber, string receiverAccountNumber, StatusType status)
+        {
+            Id = id.ToString("D6");
+            Type = type;
+            Amount = amount;
+            DateTime = DateTime.UtcNow;
+            SenderAccountNumber = senderAccountNumber;
+            ReceiverAccountNumber = receiverAccountNumber;
+            Status = status;
+        }
     }
 }

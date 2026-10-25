@@ -183,4 +183,4 @@ This project was developed to practice:
 
 ## License
 
-This project is intended for educational and learning purposes. Add a license file if you plan to distribute it under a specific open-source license.
+This project is intended for educational and learning purposes. 
